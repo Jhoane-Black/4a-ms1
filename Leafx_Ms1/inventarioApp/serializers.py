@@ -1,5 +1,6 @@
-from django.contrib.auth.models import Proveedor, Producto, Cliente, Comentario
+from .models import Proveedor, Producto, Cliente, Comentario
 from rest_framework import serializers
+
 
 class ProveedorSerializer(serializers.ModelSerializer):
     class Meta:
