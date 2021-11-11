@@ -44,6 +44,6 @@ class Comentario(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True)
     calificacion = models.CharField(max_length=1, choices = CHOICES)
     comentario = models.TextField(blank=True)
-    creacion   = models.DateField()
+    creacion   = models.DateField(auto_now_add = True)
     def __str__(self):
         return str(self.cliente) + ": " + str(self.comentario)
