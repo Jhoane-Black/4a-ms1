@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/compra.css">
+
+        <title>Leafx</title>
+    </head>
+
+    <!-- Metodología BEM CSS https://blog.interactius.com/metodolog%C3%ADa-css-block-element-modifier-bem-f26e69d1de3 -->
+
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            
+            <nav class="nav container">
+
+                <a href="/" class="nav__logo">
+
+                    <i class="ri-leaf-line nav__logo-icon"></i> Leafx
+
+                </a>
+
+                <!-- <div class="item" id="item">
+
+                    <div class="resizer ne"></div>
+                    <div class="resizer nw"></div>
+                    <div class="resizer sw"></div>
+                    <div class="resizer se"></div>
+
+                    <div class="nav__close-item" id="nav-close-item">
+
+                        <i class="ri-close-line"></i>
+
+                    </div>
+
+                </div> -->
+
+                <div class="nav__shop" id="nav-shop">
+
+                    <!-- START SECTION SHOPPING CART -->
+                    <section class="shopping-cart">
+                        <div class="container">
+                            <h1 class="text-center">CARRITO</h1>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="shopping-cart-header">
+                                        <h6>Producto</h6>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="shopping-cart-header">
+                                        <h6 class="text-truncate">Precio</h6>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="shopping-cart-header">
+                                        <h6>Cantidad</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ? START SHOPPING CART ITEMS -->
+                            <div class="shopping-cart-items shoppingCartItemsContainer">
+                            </div>
+                            <!-- ? END SHOPPING CART ITEMS -->
+                
+                            <!-- START TOTAL -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shopping-cart-total d-flex align-items-center">
+                                        <p class="mb-0">Total</p>
+                                        <p class="ml-4 mb-0 shoppingCartTotal">$ 0</p>
+                                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                                            data-delay="2000">
+                                            <div class="toast-header">
+                                                <span>✅</span>
+                                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="toast-body text-white">
+                                                Se aumentó correctamente la cantidad
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-success ml-auto buyBtn" type="button" data-toggle="modal"
+                                            data-target="#comprarModal">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END TOTAL -->
+                
+                            <!-- START MODAL COMPRA -->
+                            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Pronto recibirá su pedido</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MODAL COMPRA -->
+                
+                
+                        </div>
+                
+                    </section>
+                    <!-- END SECTION SHOPPING CART -->
+
+                    <div class="nav__close-shop" id="nav-close-shop">
+
+                        <i class="ri-close-line"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+
+                    <ul class="nav__list"> 
+
+                        <!-- Emmet https://docs.emmet.io/  (li.nav__item>a[href="#"].nav__link)*5 -->
+
+                        <li class="nav__item homeNav">
+                            <a href="#homeNav" class="nav__link">Inicio</a>
+                        </li>
+                        <li class="nav__item about">
+                            <a href="#about" class="nav__link">Acerca</a>
+                        </li>
+                        <li class="nav__item products">
+                            <a href="#products" class="nav__link">Productos</a>
+                        </li>
+                        <li class="nav__item faqs">
+                            <a href="#faqs" class="nav__link">FAQs</a>
+                        </li>
+                        <li class="nav__item contact">
+                            <a href="#contact" class="nav__link">Contáctanos</a>
+                        </li> 
+                        <li class="nav__item extras">
+                            <a href="#extras" class="nav__link">Extras</a>
+                        </li> 
+                    </ul>
+
+                    <div class="nav__close" id="nav-close-menu">
+
+                        <i class="ri-close-line"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="nav__btns">
+
+                    <!-- Botón para el Dark Mode -->
+                    <i class="ri-moon-line change-theme" id="btn-theme"></i>
+
+                    <div class="nav__toggle-shop" id="nav-toggle-shop">
+
+                        <i class="ri-shopping-cart-2-line icon__shop"></i>
+
+                    </div>
+
+
+                    <div class="nav__toggle" id="nav-toggle-menu">
+    
+                        <i class="ri-menu-line"></i>
+    
+                    </div>
+
+
+                </div>
+                    
+            </nav>
+
+        </header> 
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="homeNav">
+                
+                <div class="home__container container grid">
+
+                    <img src="assets/img/home.png" alt="Home Img" class="home__img">
+
+                    <div class="home__data">
+
+                        <h1 class="home__title">
+                            Las Plantas te harán <br> tener una vida mejor.
+                        </h1>
+
+                        <p class="home__description">
+                            Dale un diseño inverosímil a tus oficinas y <br> departamentos con increibles plantas. <br>
+                            Añadele frescura a tu ambiente laboral.
+                        </p>
+
+                        <a href="#about" class="btn btn-flex">
+                            Conoce más <i class="ri-arrow-right-down-line btn__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+
+                        <span class="home__social-follow">Síguenos</span>
+
+                        <div class="home__social-links">
+
+                            <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+
+                            <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section container" id="about">
+                
+                <div class="about__container grid">
+
+                    <img src="assets/img/about.png" alt="About Img" class="about__img">
+
+                    <div class="about__data">
+
+                        <h2 class="about__title section__title">
+                            ¿Quiénes somos realmente? & <br> ¿Por qué escogernos?
+                        </h2>
+
+                        <p class="about__description">
+                            Tenemos más de 4000 opiniones imparciales y nuestros clientes 
+                            confían en nuestro sistema de producción y en nuestro servicio de entrega.
+                        </p>
+
+                        <div class="about__details">
+
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Siempre entregamos a tiempo.
+                            </p>
+
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Te damos guías para proteger y cuidar tus plantas.
+                            </p>
+
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Siempre volvemos para una revisión luego de la venta.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Garantizamos 100% de devolución de dinero.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="btn-link btn-flex">
+                            Ordena Ahora! <i class="ri-arrow-right-down-line btn__icon"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--================= PASO A PASO =================-->
+            <section class="steps section container">
+                
+                <div class="steps__bg">
+
+                    <h2 class="section__title-center steps__title">
+                        Pasos para que tus plantas <br> se desarrollen correctamente.
+                    </h2>
+
+                    <div class="steps__container grid">
+
+                        <div class="steps__card">
+
+                            <div class="steps__card-number">01</div>
+                            <h3 class="steps__card-title">
+                                Escoge una Planta
+                            </h3>
+                            <p class="steps__card-description">
+                                Tenemos muchas variedades de plantas que puedes elegir.
+                            </p>
+
+                        </div>
+
+                        <div class="steps__card">
+
+                            <div class="steps__card-number">02</div>
+                            <h3 class="steps__card-title">
+                                Realiza un pedido.
+                            </h3>
+                            <p class="steps__card-description">
+                                Una vez hayas ordenado, pasemos al siguiente paso que es el envío.
+                            </p>
+
+                        </div>
+              
+                        <div class="steps__card">
+
+                            <div class="steps__card-number">03</div>
+                            <h3 class="steps__card-title">
+                                Recibe las plantas a tu domicilio.
+                            </h3>
+                            <p class="steps__card-description">
+                                Nuestro proceso de entrega es simple, recibes la planta directamente a tu puerta.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+            </section>
+
+            <!--==================== PRODUCTOS ====================-->
+            <section class="product section container" id="products">
+                
+                <h2 class="section__title-center">
+                    Chequea nuestros <br> productos
+                </h2>
+
+                <p class="product__description">
+                    Aquí tienes algunos de nuestras plantas seleccionadas de nuestro repertorio
+                    y todas están en un buen estado y tiene una vida larga útil. Compra y disfruta de la mejor calidad.
+                </p>
+
+                <div class="product__container grid">
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product1.png" alt="Producto 1" class="product__img">
+
+                        <h3 class="product__title">Planta Cactácea</h3>
+                        <span class="product__precio">$50,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product2.png" alt="Producto 2" class="product__img">
+
+                        <h3 class="product__title">Planta Cactus</h3>
+                        <span class="product__precio">$60,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product3.png" alt="Producto 3" class="product__img">
+
+                        <h3 class="product__title">Planta Aloe Vera</h3>
+                        <span class="product__precio">$77,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product4.png" alt="Producto 4" class="product__img">
+
+                        <h3 class="product__title">Planta Suculenta</h3>
+                        <span class="product__precio">$90,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product5.png" alt="Producto 5" class="product__img">
+
+                        <h3 class="product__title">Planta Dracaena</h3>
+                        <span class="product__precio">$23,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="product__card">
+
+                        <div class="product__circle"></div>
+
+                        <img src="assets/img/product6.png" alt="Producto 6" class="product__img">
+                        
+                        <h3 class="product__title">Planta de Menta</h3>
+                        <span class="product__precio">$30,000</span>
+
+                        <button class="btn-product btn-flex">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!--==================== FAQS ====================-->
+            <section class="questions section" id="faqs">
+                
+                <h2 class="section__title-center questions__title container">
+
+                    Estas son algunas de las <br> preguntas mas comunes
+
+                </h2>
+
+                <div class="questions__container container grid">
+
+                    <div class="questions__group">
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Mis flores se marchitan o se mueren?
+
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Qué hace que las hojas se vuelvan pálidas?
+
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Por qué las hojas se ponen marrones y quebradizas?
+                                
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="questions__group">
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Cómo elegir la planta adecuada?
+
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Cómo se cambian las macetas de una planta?
+
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="questions__item">
+
+                            <header class="questions__header">
+
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+
+                                    ¿Por qué los mosquitos vuelan alrededor de mi planta?
+
+                                </h3>
+
+                            </header>
+
+                            <div class="questions__content">
+
+                                <p class="questions__description">
+
+                                    Las plantas proveen una manera para suministrar energía a los colores y transformar su espacio, 
+                                    pero ¿Qué planta es adecuada para ti?. Elige la planta adecuada.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--=================== CONTACTOS ===================-->
+            <section class="contact section container" id="contact">                
+                
+                 <div class="contact__container grid">
+
+                    <div class="contact__box">
+
+                        <h2 class="section__title">
+
+                            Póngase en contacto con nosotros hoy <br> mismo a través de las siguientes formas.
+
+                        </h2>
+
+                        <div class="contact__data">
+
+                            <div class="contact__info">
+
+                                <h3 class="contact__subtitle">
+
+                                    Llámanos para una asistencia inmediata.
+
+                                </h3>
+
+                                <span class="contact__description">
+
+                                    <i class="ri-phone-line contact__icon"></i>
+
+                                        +57 312-345-6789
+
+                                    </a>
+
+                                </span>
+
+                            </div>
+
+                            <div class="contact__info">
+
+                                <h3 class="contact__subtitle">
+
+                                    Escríbenos por correo electrónico
+
+                                </h3>
+
+                                <span class="contact__description">
+
+                                    <i class="ri-mail-line contact__icon"></i>
+
+                                        centrodeayuda@leafx.com
+
+                                    </a>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <form action="" class="contact__form">
+
+                        <div class="contact__inputs">
+
+                            <div class="contact__content">
+
+                                <input placeholder=" " type="email" name="email" 
+                                id="email" class="contact__input">
+                                <label for="email" class="contact__label">Email</label>
+
+                            </div>
+
+                            <div class="contact__content">
+
+                                <input placeholder=" " type="text" name="asunto" 
+                                id="asunto" class="contact__input">
+                                <label for="asunto" class="contact__label">Asunto</label>
+
+                            </div>
+
+                            <div class="contact__content contact__area">
+
+                                <textarea name="mensaje" id="mensaje"
+                                placeholder=" " class="contact__input"></textarea>
+                                <label for="mensaje" class="contact__label">Mensaje</label>
+
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-flex">
+
+                            Enviar Mensaje
+                            <i class="ri-arrow-right-up-line btn__icon"></i>
+
+                        </button>
+
+                    </form>
+
+                 </div>
+
+            </section>
+
+            <!--==================== EXTRA INFORMACIÓN ====================-->
+            <section class="extra section" id="extras">
+
+                <div class="extra__container container grid">
+
+                    <div class="extra__content">
+
+                        <a href="#" class="extra__logo">
+
+                            <i class="ri-leaf-line extra__logo-icon"></i> Leafx
+
+                        </a>
+
+                        <h3 class="extra__title">
+
+                            Suscribete a nuestro newsletter <br> para estar al día
+
+                        </h3>
+
+                        <div class="extra__subscribe">
+
+                            <input type="email" name="email" id="email" 
+                            placeholder="Ingresa tu Email"class="extra__input">
+
+                            <button class="btn btn-flex btn-extra">
+
+                                Suscribirse
+                                <i class="ri-arrow-right-up-line btn__icon"></i>
+                            
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="extra__content">
+
+                        <h3 class="extra__title">Nuestra dirección</h3>
+
+                        <ul class="extra__data">
+
+                            <li class="extra__info">1234 - Colombia</li>
+                            <li class="extra__info">Bogotá D.C - 131937</li>
+                            <li class="extra__info">123-456-789</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="extra__content">
+
+                        <h3 class="extra__title">Contáctanos</h3>
+
+                        <ul class="extra__data">
+
+                            <li class="extra__info">+57 312-345-6789</li>
+
+                            <div class="extra__social">
+
+                                <a href="https://www.facebook.com/" class="extra__social-link">
+                                    <i class="ri-facebook-fill extra__social-icon"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" class="extra__social-link">
+                                    <i class="ri-instagram-fill extra__social-icon"></i>
+                                </a>
+                                <a href="https://twitter.com/" class="extra__social-link">
+                                    <i class="ri-twitter-fill extra__social-icon"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/feed/" class="extra__social-link">
+                                    <i class="ri-linkedin-fill extra__social-icon"></i>
+                                </a>
+
+                            </div>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="extra__content">
+
+                        <h3 class="extra__title">Aceptamos tarjetas de credito</h3>
+
+                        <div class="extra__cards">
+
+                            <img src="assets/img/card1.png" alt="Visa" class="extra__card">
+                            <img src="assets/img/card2.png" alt="MasterCard" class="extra__card">
+                            <img src="assets/img/card3.png" alt="Paypal" class="extra__card">
+                            <img src="assets/img/card4.png" alt="Discover" class="extra__card">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- <p class="extra__copy">
+
+                    &#169; P52 - G4. Todos los Derechos Reservados.
+
+                </p> -->
+
+            </section>
+
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+ 
+            <div class="waves">
+
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+
+            </div>
+
+           <ul class="social_icon">
+               <li>
+                   <a href="https://www.facebook.com/">
+                       <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                   <a href="https://www.instagram.com/">
+                       <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="https://www.linkedin.com/">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                     </a>
+                 </li>
+           </ul>
+
+           <ul class="menu">
+
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Acerca</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contacts">Contáctanos</a></li>
+            <li><a href="#extras">Extras</a></li>
+
+           </ul>
+
+           <p>&copy; P52 - G4 | Todos los derechos reservados. 2021</p>
+            
+        </footer> 
+
+        <!--=============== SCROLL UP ===============-->
+        
+        <a href="#" class="scrollup" id="scroll-up">
+
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== LOADER ANIMATION ===============-->
+
+         <section class="section__loader">
+
+            <div class="loader">
+
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <span style="--i:5;"></span>
+                <span style="--i:6;"></span>
+                <span style="--i:7;"></span>
+                <span style="--i:8;"></span>
+                <span style="--i:9;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+
+            </div>
+
+        </section>
+        
+        <!-- ========== DRAGGABLE and RESIZABLE ========== -->
+        <!-- <script src="assets/js/navShop.js"></script> -->
+  
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        
+        <!--=============== CARRITO JS ===============-->
+        <script src="assets/js/carritoPrueba.js"></script>
+    
+    </body>
+</html>
