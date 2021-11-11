@@ -15,12 +15,27 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Secrets
+import json
+import os
+from django.core.exceptions import ImproperlyConfigured
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z=z($%7pdg#zf#kkd_=nr=ku6cv9#22gxl%_e1t555)ezofjf3'
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd8qatj4qnptoi',
         'USER': 'bfcffipvjriadb',
-        'PASSWORD': 'ccbdadbbc68c142b3cd73091740127f5a24dfbc76a7c1d07f32ebce38175cf9b',
+        'PASSWORD': get_secret('PASSWORD'),
         'HOST': 'ec2-54-145-102-149.compute-1.amazonaws.com',
         'PORT': '5432',
     }
@@ -148,3 +163,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+
