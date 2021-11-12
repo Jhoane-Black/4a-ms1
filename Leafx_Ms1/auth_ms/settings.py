@@ -107,6 +107,7 @@ DATABASES = {
         'PASSWORD': get_secret('PASSWORD'),
         'HOST': 'ec2-54-145-102-149.compute-1.amazonaws.com',
         'PORT': '5432',
+        'TEST': {'MIRROR': 'default',},
     }
 }
 
@@ -161,7 +162,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ),
+    
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 
 

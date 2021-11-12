@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['username', 'email']
 
 class ProveedorSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    #user = UserSerializer(read_only=True)
     class Meta:
         model = Proveedor
         fields = '__all__'
@@ -20,7 +20,7 @@ class ProductoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ClienteSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    #user = UserSerializer(read_only=True)
     class Meta:
         model = Cliente
         fields = '__all__'
