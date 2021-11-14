@@ -11,3 +11,5 @@ https://arqdve.atlassian.net/jira/software/projects/UMPG/code
 
 ## Repositorio Github
 https://github.com/Jhoane-Black/4a-docs
+
+### Nota: el proyecto se encuentra ubicado por el momento en la rama leaf/backend/
