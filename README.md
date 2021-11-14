@@ -13,3 +13,5 @@ https://arqdve.atlassian.net/jira/software/projects/UMPG/code
 https://github.com/Jhoane-Black/4a-docs
 
 ### Nota: el proyecto se encuentra ubicado por el momento en la rama leaf/backend/
+
+### Nota: poner manualmente las credenciales del backend, que se encuentran el la carpeta drive (secrets.json) dentro de la carpeta Leafx_Ms1 (ubicada en leaf/backend) 
