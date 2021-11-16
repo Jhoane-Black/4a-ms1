@@ -243,6 +243,7 @@ class TestAPI(TestCase):
         response = client.get('/inventario/comentario/')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
 
 
     def test_get_comentario(self):
@@ -306,3 +307,26 @@ class TestAPI(TestCase):
         response = client.delete('/inventario/comentario/1/')
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+
+# Test endpoints Resumen
+
+    def test_get_comentariosdeproducto(self):
+        client = APIClient()
+        response = client.get('/inventario/resumen/producto/1/')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+    def test_get_comentariosdecliente(self):
+        client = APIClient()
+        response = client.get('/inventario/resumen/cliente/1/')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
+
+    def test_get_productosdeproveedor(self):
+        client = APIClient()
+        response = client.get('/inventario/resumen/proveedor/1/')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)    
